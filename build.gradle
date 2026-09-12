@@ -24,11 +24,15 @@ loom {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	
+	mappings loom.layered() {
+		officialMojangMappings()
+		yarn("net.fabricmc:yarn:${project.yarn_mappings}:v2")
+	}
 	
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Fabric API linked to both source sets
+	// Required for split client source set
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
