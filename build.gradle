@@ -13,6 +13,9 @@ repositories {
 
 loom {
     splitEnvironmentSourceSets()
+    
+    // Explicitly configure un-obfuscated mappings inside loom block
+    customMinecraftManifest("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json")
 
     mods {
         "vanguard" {
@@ -25,7 +28,10 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // NOTE: Do NOT include any mappings block here for un-obfuscated builds.
+    // Use loom.officialMojangMappings() directly as a dependency parameter:
+    mappings loom.officialMojangMappings {
+        // Leave empty for un-obfuscated defaults
+    }
     
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
