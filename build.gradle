@@ -25,8 +25,8 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Direct Yarn mappings replacing the broken loom.layered() block
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    // Use explicit parenthesis for the mappings method:
+    mappings("net.fabricmc:yarn:${project.yarn_mappings}:v2")
     
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
