@@ -4,6 +4,7 @@ plugins {
 }
 
 repositories {
+	mavenCentral()
 }
 
 loom {
@@ -18,13 +19,13 @@ loom {
 }
 
 dependencies {
-	// Minecraft & Mappings
+	// Minecraft base setup
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings() // Uses official Mojang mappings automatically
+	mappings loom.officialMojangMappings()
 	
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Fabric API for both source sets
+	// Expose Fabric API to client source set
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
