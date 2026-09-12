@@ -23,11 +23,10 @@ loom {
 }
 
 dependencies {
+    // 1. Minecraft version (no mappings line needed for un-obfuscated versions)
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Fixed: Uses official Mojang mappings directly without loom.layered()
-    mappings loom.officialMojangMappings()
-    
+    // 2. Fabric Loader & API
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
