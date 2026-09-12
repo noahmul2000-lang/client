@@ -25,7 +25,7 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Explicitly passing officialMojangMappings registers modImplementation
+    // Modern Loom 1.8 un-obfuscated mapping syntax
     mappings loom.officialMojangMappings()
     
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
