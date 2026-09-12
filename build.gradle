@@ -23,13 +23,10 @@ loom {
 }
 
 dependencies {
+    // 1. Minecraft version
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Correct Fabric Loom 1.17+ syntax for Yarn mappings
-    mappings loom.layered() {
-        yarn("net.fabricmc:yarn:${project.yarn_mappings}:v2")
-    }
-    
+    // 2. Fabric Loader & API (Notice: mappings line is REMOVED from here)
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
