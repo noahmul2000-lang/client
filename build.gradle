@@ -4,7 +4,6 @@ plugins {
 }
 
 repositories {
-	mavenCentral()
 }
 
 loom {
@@ -19,13 +18,13 @@ loom {
 }
 
 dependencies {
-	// Minecraft base setup
+	// Minecraft base setup using Yarn mappings
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings loom.officialMojangMappings()
+	mappings "net.fabricmc:yarn:${project.minecraft_version}+build.1:v2"
 	
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-loader:${project.loader_version}"
 
-	// Expose Fabric API to client source set
+	// Expose Fabric API to both source sets
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 }
