@@ -25,7 +25,6 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Modern Loom 1.8 un-obfuscated mapping syntax
     mappings loom.officialMojangMappings()
     
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -43,13 +42,13 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 25
+    it.options.release = 21
 }
 
 java {
     withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_25
-    targetCompatibility = JavaVersion.VERSION_25
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
