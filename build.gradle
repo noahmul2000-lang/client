@@ -23,10 +23,11 @@ loom {
 }
 
 dependencies {
-    // 1. Minecraft version (No mappings block used for 26.x un-obfuscated builds)
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // 2. Fabric Loader & Fabric API
+    // This line registers modImplementation properly on Loom 1.10+
+    mappings loom.officialMojangMappings()
+    
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
     modClientImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
