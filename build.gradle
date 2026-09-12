@@ -25,8 +25,7 @@ loom {
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     
-    // Required: Initializes Loom's dependency handlers for un-obfuscated versions
-    mappings loom.officialMojangMappings()
+    // NOTE: Do NOT include any mappings block here for un-obfuscated builds.
     
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
