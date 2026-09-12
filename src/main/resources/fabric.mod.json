@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "vanguard",
 	"version": "${version}",
-	"name": "Example Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Vanguard Client",
+	"description": "Vanguard Utility Client with Flight, ESP, and KillAura.",
 	"authors": [
 		"Me!"
 	],
@@ -19,7 +19,7 @@
 			"com.example.ExampleMod"
 		],
 		"client": [
-			"com.example.client.ExampleModClient"
+			"com.example.helperclient.HelperClientModClient"
 		]
 	},
 	"mixins": [
